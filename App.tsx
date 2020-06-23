@@ -6,6 +6,7 @@ import PullToFetch from './components/PullToFetch'
 import { Text, SafeAreaView } from 'react-native'
 import { useFonts } from '@use-expo/font'
 import { fonts } from './lib/theme'
+import Form from './components/Form'
 
 export default function App() {
   const [fontsLoaded] = useFonts(fonts)
@@ -16,6 +17,7 @@ export default function App() {
     return (
       <SafeAreaView>
         <PullToFetch />
+        <Form />
       </SafeAreaView>
     )
   }
