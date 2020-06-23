@@ -29,8 +29,8 @@ const palette: Palette = {
 }
 
 const fonts: Fonts = {
-  'Overpass-Light': require('../assets/fonts/OverpassMono-Light.ttf'),
-  'Overpass-Bold': require('../assets/fonts/OverpassMono-Bold.ttf'),
+  light: require('../assets/fonts/OverpassMono-Light.ttf'),
+  bold: require('../assets/fonts/OverpassMono-Bold.ttf'),
 }
 
 export { scale, palette, fonts }
