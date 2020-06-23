@@ -11,6 +11,10 @@ interface Palette {
   [key: string]: string
 }
 
+interface Fonts {
+  [key: string]: string
+}
+
 const scale: Scale = {
   fontSize: '13px',
   gridUnit: '16px',
@@ -24,4 +28,9 @@ const palette: Palette = {
   positives1: '#34C95C',
 }
 
-export { scale, palette }
+const fonts: Fonts = {
+  'Overpass-Light': require('../assets/fonts/OverpassMono-Light.ttf'),
+  'Overpass-Bold': require('../assets/fonts/OverpassMono-Bold.ttf'),
+}
+
+export { scale, palette, fonts }
