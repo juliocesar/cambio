@@ -4,6 +4,7 @@
 import React from 'react'
 import styled from 'styled-components/native'
 import Text from '../Text'
+import Textfield from '../Textfield'
 
 const Wrapper = styled.View`
   flex-flow: column;
@@ -13,6 +14,7 @@ const Wrapper = styled.View`
 const Form = () => (
   <Wrapper>
     <Text>You’re tracking</Text>
+    <Textfield placeholder="Enter a currency / amount" />
   </Wrapper>
 )
 
