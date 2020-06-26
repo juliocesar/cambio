@@ -10,6 +10,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@react-native-community/picker": "^1.6.5",
     "@use-expo/font": "^2.0.0",
     "expo": "~37.0.3",
     "react": "~16.9.0",
