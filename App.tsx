@@ -2,11 +2,10 @@
 // ===============
 
 import React from 'react'
-import PullToFetch from './components/PullToFetch'
-import { Text, SafeAreaView } from 'react-native'
+import Main from './screens/Main'
+import { Text } from 'react-native'
 import { useFonts } from '@use-expo/font'
 import { fonts } from './lib/theme'
-import Form from './components/Form'
 
 export default function App() {
   const [fontsLoaded] = useFonts(fonts)
@@ -14,11 +13,6 @@ export default function App() {
   if (!fontsLoaded) {
     return <Text>Loading…</Text>
   } else {
-    return (
-      <SafeAreaView>
-        <PullToFetch />
-        <Form />
-      </SafeAreaView>
-    )
+    return <Main />
   }
 }
