@@ -6,6 +6,7 @@ import styled from 'styled-components/native'
 import Text from '../Text'
 import Textfield from '../Textfield'
 import Spacer from '../Spacer'
+import Select from '../Select'
 
 const Wrapper = styled.View`
   flex-flow: column;
@@ -22,7 +23,14 @@ const Form = () => (
     <Text>You’re tracking</Text>
     <Spacer units={2} />
     <Row>
-      <Textfield placeholder="currency" />
+      <Select
+        items={[
+          { label: 'Australian Dollar', value: 'AUD' },
+          { label: 'American Dollar', value: 'USD' },
+          { label: 'Brazilian Real', value: 'BRL' },
+        ]}
+        onValueChange={val => console.log(val)}
+      />
       <Spacer horizontal units={1} />
       <Textfield placeholder="amount" />
     </Row>
@@ -30,7 +38,14 @@ const Form = () => (
     <Row>
       <Text>to</Text>
       <Spacer horizontal units={1} />
-      <Textfield placeholder="currency" />
+      <Select
+        items={[
+          { label: 'Australian Dollar', value: 'AUD' },
+          { label: 'American Dollar', value: 'USD' },
+          { label: 'Brazilian Real', value: 'BRL' },
+        ]}
+        onValueChange={val => console.log(val)}
+      />
     </Row>
   </Wrapper>
 )

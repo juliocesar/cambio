@@ -5,9 +5,9 @@ import React from 'react'
 import { TextInput } from 'react-native'
 import styled from 'styled-components'
 import dirg from '../../lib/dirg'
-import color from '../../lib/color'
 import { style as sizes } from '../Text/sizes'
 import { style as weights } from '../Text/weights'
+import { style as baseStyle } from '../Field'
 
 interface Props {
   value?: string
@@ -15,11 +15,7 @@ interface Props {
 }
 
 const Wrapper = styled(TextInput)`
-  height: ${dirg.units(3)};
-  padding-left: ${dirg.units(1)};
-  padding-right: ${dirg.units(1)};
-  background-color: ${color('neutrals2')};
-
+  ${baseStyle};
   ${sizes.TextSizeRegular};
   line-height: ${dirg.units(1.5)};
   ${weights.light};
