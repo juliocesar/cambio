@@ -13,6 +13,8 @@
   "dependencies": {
     "@use-expo/font": "^2.0.0",
     "expo": "^38.0.0",
+    "mobx": "^5.15.4",
+    "mobx-react": "^6.2.2",
     "react": "16.11.0",
     "react-dom": "16.11.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.0.tar.gz",
