@@ -12,6 +12,7 @@ import { style as baseStyle } from '../Field'
 interface Props {
   value?: string
   placeholder?: string
+  onChange?: (value: string) => void
 }
 
 const Wrapper = styled(TextInput)`
@@ -21,8 +22,8 @@ const Wrapper = styled(TextInput)`
   ${weights.light};
 `
 
-const Textfield = ({ value, placeholder }: Props) => (
-  <Wrapper value={value} placeholder={placeholder} />
+const Textfield = ({ value, placeholder, onChange }: Props) => (
+  <Wrapper value={value} placeholder={placeholder} onChangeText={onChange} />
 )
 
 export default Textfield

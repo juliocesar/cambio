@@ -11,6 +11,7 @@ import color from '../../lib/color'
 interface Props {
   onValueChange: (value: string) => void
   items: Array<any>
+  placeholder?: string
 }
 
 const style = {
@@ -25,8 +26,13 @@ const style = {
   },
 }
 
-const Select = ({ onValueChange, items }: Props) => (
-  <RNPickerSelect style={style} items={items} onValueChange={onValueChange} />
+const Select = ({ onValueChange, items, placeholder }: Props) => (
+  <RNPickerSelect
+    style={style}
+    items={items}
+    onValueChange={onValueChange}
+    placeholder={placeholder}
+  />
 )
 
 export default Select
