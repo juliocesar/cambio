@@ -12,7 +12,7 @@ import { useObserver } from 'mobx-react'
 import { observable } from 'mobx'
 
 interface Props {
-  onSetExchange: (from: string, to: string) => any
+  onSetExchange: (from: string, to: string, amount: number) => any
 }
 
 const Wrapper = styled.View`
@@ -38,7 +38,7 @@ const Form = ({ onSetExchange }: Props) => {
         store.set(field, value)
       }
     },
-    [],
+    [store.from, store.to, store.amount],
   )
 
   return useObserver(() => (
@@ -55,7 +55,11 @@ const Form = ({ onSetExchange }: Props) => {
           onValueChange={update('from')}
         />
         <Spacer horizontal units={1} />
-        <Textfield placeholder="amount" onChange={update('amount')} />
+        <Textfield
+          placeholder="amount"
+          onChange={update('amount')}
+          type="numeric"
+        />
       </Row>
       <Spacer units={2} />
       <Row>
@@ -71,7 +75,9 @@ const Form = ({ onSetExchange }: Props) => {
         />
       </Row>
       <TouchableOpacity
-        onPress={() => onSetExchange(store.get('from'), store.get('to'))}>
+        onPress={() =>
+          onSetExchange(store.get('from'), store.get('to'), store.get('amount'))
+        }>
         <View style={style.button}></View>
       </TouchableOpacity>
     </Wrapper>

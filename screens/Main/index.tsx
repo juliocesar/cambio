@@ -12,8 +12,8 @@ interface Props {
 }
 
 const Main = ({ store }) => {
-  const handleSetExchange = (from: string, to: string) => {
-    store.fetch(from, to)
+  const handleSetExchange = (from: string, to: string, amount: number) => {
+    store.fetch(from, to, amount)
   }
 
   return useObserver(() => (
@@ -24,7 +24,11 @@ const Main = ({ store }) => {
         data={store.rates}
         extraData={store.rates.length}
         keyExtractor={item => item.id}
-        renderItem={({ item }) => <Text>{item.from}</Text>}
+        renderItem={({ item }) => (
+          <Text>
+            {item.from}, {item.to}, {item.amount}
+          </Text>
+        )}
       />
     </SafeAreaView>
   ))

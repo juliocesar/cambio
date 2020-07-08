@@ -12,7 +12,7 @@ const ratesStore = {
     ratesStore.rates.push(rate)
   },
 
-  async fetch(from: string, to: string): Promise<any> {
+  async fetch(from: string, to: string, amount: number): Promise<any> {
     const API_KEY = Constants.manifest.extra.currConvApiKey
 
     const response = await fetch(
@@ -22,7 +22,7 @@ const ratesStore = {
 
     if (response.ok) {
       const parsedResponse = await response.json()
-      this.add(rate(parsedResponse))
+      this.add(rate(parsedResponse, amount))
     }
   },
 }
