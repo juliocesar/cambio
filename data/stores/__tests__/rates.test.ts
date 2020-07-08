@@ -11,7 +11,7 @@ function mockAPIResponse(from: string, to: string) {
 describe('the rates store', () => {
   test('adds a rate to the store with add()', () => {
     const totalRates = ratesStore.rates.length
-    ratesStore.add(rate(mockAPIResponse('BRL', 'AUD')))
+    ratesStore.add(rate(mockAPIResponse('BRL', 'AUD'), 100))
 
     expect(ratesStore.rates.length).toBe(totalRates + 1)
   })
