@@ -1,7 +1,7 @@
 // Currency form
 // =============
 
-import React, { useMemo } from 'react'
+import React from 'react'
 import { View, TouchableOpacity, StyleSheet } from 'react-native'
 import styled from 'styled-components/native'
 import Text from '../Text'
@@ -32,14 +32,11 @@ const Form = ({ onSetExchange }: Props) => {
     amount: null,
   })
 
-  const update = useMemo(
-    () => (field: string) => {
-      return (value: string) => {
-        store.set(field, value)
-      }
-    },
-    [store.from, store.to, store.amount],
-  )
+  const update = (field: string) => {
+    return (value: string) => {
+      store.set(field, value)
+    }
+  }
 
   return useObserver(() => (
     <Wrapper>
